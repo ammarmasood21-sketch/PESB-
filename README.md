@@ -13,7 +13,7 @@ Client-Server Architecture is a communication model in which two main components
 - Client: A device or application that requests information or services.
 - Server: A computer or system that receives requests, processes them, and sends responses.
 
-**In simple words: The client asks, and the server responds.**
+In simple words: The client asks, and the server responds.
 
 ### Examples of Clients
 - Web browsers (Google Chrome, Firefox).
@@ -220,7 +220,7 @@ The server sends:
 | 500 | Internal Server Error. |
 | 503 | Service Unavailable. |
 
-**Remember:**
+Remember:
 
 - `404` means the requested resource could not be found.
 - `500` means something went wrong on the server.
@@ -342,7 +342,7 @@ A session is a mechanism used by the server to maintain information about a user
 6. Browser sends the cookie with subsequent requests.
 7. Server identifies the user through the session.
 
-**Important:** Session cookies should be protected using HTTPS and appropriate security settings such as HttpOnly and Secure.
+Important: Session cookies should be protected using HTTPS and appropriate security settings such as HttpOnly and Secure.
 
 ## 10. What Are APIs?
 
@@ -553,7 +553,7 @@ Instead:
 5. Results are sent back to your browser.
 6. Your browser displays the results.
 
-**Important distinction:**
+Important distinction:
 
 Your CPU performs local operations, while Google's infrastructure performs the server-side search and ranking operations.
 
@@ -571,14 +571,14 @@ Example:
 00:1A:2B:3C:4D:5E
 ```
 
-**Important points:**
+Important points:
 - Used in local network communication.
 - Works at the Data Link Layer.
 - Usually assigned to a network interface.
 - Can be changed or spoofed in software.
 - Routers replace the Ethernet/Wi-Fi link-layer frame as packets move between networks.
 
-**MAC Address vs IP Address**
+MAC Address vs IP Address
 
 | MAC Address | IP Address |
 |---|---|
@@ -651,7 +651,7 @@ Simple example:
 - TCP: Sending an important document where correct and ordered delivery matters.
 - UDP: A live voice or video call where receiving the latest information quickly is important.
 
-**Remember:** UDP is not automatically faster in every situation. Performance depends on the application and network conditions.
+Remember: UDP is not automatically faster in every situation. Performance depends on the application and network conditions.
 
 ## 9. Structure of a URL
 
@@ -761,7 +761,7 @@ It means:
           |  CONNECTION READY    |
 ```
 
-**Remember:** SYN, SYN-ACK, ACK.
+Remember: SYN, SYN-ACK, ACK.
 
 ## 3. What is HTTP?
 
@@ -833,7 +833,7 @@ Instead of communicating directly with the destination, the client sends its req
 
 A forward proxy works on behalf of clients.
 
-**Example:**
+Example:
 
 A company uses a forward proxy to control employees' internet access.
 
@@ -936,7 +936,7 @@ It helps protect network traffic while it travels through untrusted networks.
 - Change the apparent public IP address.
 - Connect remote employees to internal resources.
 
-**Important:** A VPN does not make you completely anonymous or guarantee protection against malware, phishing, or tracking.
+Important: A VPN does not make you completely anonymous or guarantee protection against malware, phishing, or tracking.
 
 ---
 
@@ -971,7 +971,7 @@ By completing these three lectures, you should understand:
 
 ## 📖 Learning Philosophy
 
-**Understand the concept before memorizing the command.**
+Understand the concept before memorizing the command.
 
 Networking is the foundation of web development, system administration, and cybersecurity.
 
@@ -980,3 +980,812 @@ Every website, application, and online service depends on communication between 
 Keep learning. Keep practicing. Keep building.
 
 Boot Camp – Networking & Web Development Fundamentals
+
+# 🐍 Lecture 4 – Python Programming Fundamentals
+
+## 1. Introduction to Python
+
+Python is a high-level, general-purpose programming language known for its simple syntax and readability.
+
+It is used in many areas of technology, including:
+
+- Web Development.
+- Artificial Intelligence (AI).
+- Machine Learning (ML).
+- Cybersecurity.
+- Data Science.
+- Automation and Scripting.
+- Software Development.
+
+### Why Do We Use Python?
+
+Python allows developers to write instructions in a human-readable format instead of working directly with machine-level instructions.
+
+Example:
+
+```python
+print("Hello, World!")
+```
+
+Output:
+
+```text
+Hello, World!
+```
+
+The `print()` function displays information on the screen.
+
+## 2. Programming Languages – How Computers Understand Instructions
+
+Computers do not directly understand programming languages such as Python, Java, or C++.
+
+At the hardware level, computers process instructions represented using binary digits:
+
+- `0` = Binary zero.
+- `1` = Binary one.
+
+These digits are called bits.
+
+### What is Binary?
+
+Binary is a number system that uses only two digits: 0 and 1.
+
+Computers use electronic circuits that represent information through different electrical states.
+
+For example, binary data can be represented as:
+
+```text
+01001000 01100101 01101100
+```
+
+These bits represent information that computers can process.
+
+### How Does Python Become Machine Instructions?
+
+When you write Python code, it must go through several stages before the processor can execute the required operations.
+
+The general process is:
+
+1. You write Python source code.
+2. The Python interpreter reads and analyzes the code.
+3. Python compiles the source code into Python bytecode.
+4. The Python Virtual Machine (PVM) executes the bytecode.
+5. The computer's processor performs the underlying machine instructions.
+
+### Python Execution Flow
+
+```text
+   PYTHON SOURCE CODE
+           |
+           v
+      INTERPRETER
+           |
+           v
+      COMPILATION
+           |
+           v
+      PYTHON BYTECODE
+           |
+           v
+  PYTHON VIRTUAL MACHINE
+           |
+           v
+   MACHINE INSTRUCTIONS
+           |
+           v
+      CPU EXECUTION
+```
+
+Important: Python does not normally translate your entire program directly into a standalone machine-code executable. In the standard CPython implementation, source code is compiled into bytecode, which is executed by the Python Virtual Machine.
+
+## 3. What is an Interpreter?
+
+An interpreter is a program that reads and executes instructions written in a programming language.
+
+Python is commonly called an interpreted language because developers generally run Python programs through an interpreter.
+
+Example:
+
+```python
+name = "Ammar"
+print(name)
+```
+
+The Python interpreter processes the instructions and produces the output.
+
+### Interpreter vs Compiler
+
+| Interpreter | Compiler |
+|---|---|
+| Processes and executes code through a runtime. | Translates source code into another form, often machine code. |
+| Commonly works with a runtime environment. | Can produce standalone executable programs. |
+| Errors can be reported during execution. | Compilation can identify errors before execution. |
+| Example: Python (CPython execution model). | Example: C and C++ compiled workflows. |
+
+Note: Modern programming languages can use a combination of compilation, interpretation, and runtime optimization. The distinction is not always strictly one or the other.
+
+## 4. What is Python Bytecode?
+
+Bytecode is an intermediate set of instructions generated from Python source code.
+
+It is not the same as machine code.
+
+Python bytecode is designed to be executed by the Python Virtual Machine.
+
+### Example
+
+Python source code:
+
+```python
+a = 10
+b = 20
+
+result = a + b
+
+print(result)
+```
+
+Python internally compiles this code into bytecode instructions.
+
+You can inspect bytecode using Python's `dis` module:
+
+```python
+import dis
+
+def calculate():
+    a = 10
+    b = 20
+    return a + b
+
+dis.dis(calculate)
+```
+
+The output shows instructions such as:
+
+```text
+LOAD_CONST
+STORE_FAST
+BINARY_OP
+RETURN_VALUE
+```
+
+These are Python bytecode instructions.
+
+Remember:
+- Source code = Code written by the programmer.
+- Bytecode = Intermediate instructions generated by Python.
+- Machine code = Instructions executed by the processor.
+
+## 5. What is Python Virtual Machine (PVM)?
+
+PVM stands for Python Virtual Machine.
+
+It is the execution engine responsible for executing Python bytecode.
+
+After Python compiles source code into bytecode, the PVM processes those instructions.
+
+### How PVM Works
+
+1. The programmer writes Python code.
+2. The interpreter compiles the code into bytecode.
+3. The PVM reads the bytecode instructions.
+4. The PVM performs the required operations through the underlying runtime and operating system.
+5. The program produces the expected output.
+
+### PVM Diagram
+
+```text
+     SOURCE CODE
+          |
+          v
+    PYTHON COMPILER
+          |
+          v
+     BYTECODE
+          |
+          v
+   PYTHON VIRTUAL
+       MACHINE
+          |
+          v
+   RUNTIME OPERATIONS
+          |
+          v
+       OPERATING
+        SYSTEM
+          |
+          v
+       HARDWARE
+          |
+          v
+         CPU
+```
+
+Example:
+
+```python
+print(10 + 20)
+```
+
+The PVM executes the required bytecode operations, and the result is displayed:
+
+```text
+30
+```
+
+Important: The PVM is not a physical computer or a separate virtual operating system like VirtualBox. It is part of the Python runtime environment.
+
+## 6. What is CPython?
+
+CPython is the most widely used implementation of Python.
+
+It is written primarily in the C programming language.
+
+When you install the standard Python distribution from python.org on Windows, you are generally installing CPython.
+
+### What Does CPython Do?
+
+- Reads Python source code.
+- Compiles source code into bytecode.
+- Executes bytecode using its virtual machine.
+- Manages memory and Python objects.
+- Provides access to built-in Python functionality.
+
+Other Python implementations include:
+
+- PyPy.
+- Jython.
+- IronPython.
+
+## 7. Python Fundamentals – Variables
+
+A variable is a name used to refer to an object or value in a program.
+
+Example:
+
+```python
+name = "Ammar"
+age = 25
+salary = 50000
+
+print(name)
+print(age)
+print(salary)
+```
+
+Output:
+
+```text
+Ammar
+25
+50000
+```
+
+### Understanding Variables
+
+- `name` refers to a string object.
+- `age` refers to an integer object.
+- `salary` refers to another integer object.
+
+Python automatically determines the type of an object.
+
+You do not need to declare the variable type manually.
+
+## 8. Python Data Types
+
+A data type identifies the kind of value an object represents.
+
+Python provides several built-in data types.
+
+| Data Type | Description | Example |
+|---|---|---|
+| int | Integer numbers | `age = 25` |
+| float | Decimal numbers | `price = 99.99` |
+| str | Text | `name = "Ammar"` |
+| bool | True or False | `is_active = True` |
+| complex | Complex numbers | `number = 5 + 7j` |
+| list | Ordered, mutable collection | `[10, 20, 30]` |
+| tuple | Ordered, immutable collection | `(10, 20, 30)` |
+| set | Collection of unique elements | `{10, 20, 30}` |
+| dict | Key-value collection | `{"name": "Ammar"}` |
+
+### Checking Data Types
+
+Python provides the `type()` function to identify an object's data type.
+
+```python
+name = "Ammar"
+age = 25
+price = 99.99
+
+print(type(name))
+print(type(age))
+print(type(price))
+```
+
+Output:
+
+```text
+<class 'str'>
+<class 'int'>
+<class 'float'>
+```
+
+## 9. What is Dynamic Typing?
+
+Python is a dynamically typed language.
+
+This means you do not need to specify a variable's data type when creating it.
+
+Python determines the type at runtime.
+
+Example:
+
+```python
+x = 10
+print(type(x))
+
+x = "Hello"
+print(type(x))
+
+x = 10.5
+print(type(x))
+```
+
+Output:
+
+```text
+<class 'int'>
+<class 'str'>
+<class 'float'>
+```
+
+The name `x` can refer to objects of different types during program execution.
+
+Important: Python is dynamically typed, but it is also strongly typed. It does not automatically allow every operation between incompatible types.
+
+For example:
+
+```python
+age = 25
+name = "Ammar"
+
+print(age + name)
+```
+
+This produces a `TypeError` because an integer and a string cannot be added directly.
+
+## 10. Mutable vs Immutable Objects
+
+Mutability is one of the most important concepts in Python.
+
+It explains whether an object's contents can be changed after the object has been created.
+
+### A. Mutable Objects
+
+Mutable objects can be modified after creation without creating a different object.
+
+Common mutable types:
+- List.
+- Dictionary.
+- Set.
+
+Example:
+
+```python
+students = ["Ammar", "Hassan", "Sohail"]
+
+students.append("Saad")
+
+print(students)
+```
+
+Output:
+
+```text
+['Ammar', 'Hassan', 'Sohail', 'Saad']
+```
+
+The original list was modified by adding another student.
+
+You can also update an existing element:
+
+```python
+students[0] = "Ali"
+
+print(students)
+```
+
+Output:
+
+```text
+['Ali', 'Hassan', 'Sohail', 'Saad']
+```
+
+### B. Immutable Objects
+
+Immutable objects cannot be modified after creation.
+
+If you perform an operation that appears to change an immutable object, Python creates or returns another object instead.
+
+Common immutable types:
+- Integer.
+- Float.
+- String.
+- Boolean.
+- Tuple.
+- Frozen set.
+
+Example:
+
+```python
+name = "Ammar"
+
+name = name + " Masood"
+
+print(name)
+```
+
+Output:
+
+```text
+Ammar Masood
+```
+
+The original string was not modified. A new string object was created and the variable `name` was assigned to it.
+
+### Mutable vs Immutable Comparison
+
+| Mutable | Immutable |
+|---|---|
+| Can be modified after creation. | Cannot be modified after creation. |
+| Existing object can be changed. | Operations that change values produce another object. |
+| Examples: List, Dictionary, Set. | Examples: String, Integer, Tuple. |
+
+### Real-World Example
+
+Imagine a shopping list:
+
+Mutable: You have a list of groceries and add or remove items from the same list.
+
+Immutable: You have a printed receipt. If you need to change its contents, you must create a new receipt instead of modifying the printed one.
+
+### Checking Object Identity
+
+Python provides the `id()` function to inspect an object's identity.
+
+```python
+numbers = [10, 20, 30]
+
+print(id(numbers))
+
+numbers.append(40)
+
+print(id(numbers))
+```
+
+The list retains the same identity when modified in place.
+
+Compare this with an integer:
+
+```python
+x = 10
+
+print(id(x))
+
+x = x + 5
+
+print(id(x))
+```
+
+The variable is now referring to the result of a new integer object.
+
+Remember: `id()` reports an object's identity during its lifetime. It should not be treated as a permanent memory address.
+
+## 11. Python Operators
+
+Operators are symbols or keywords used to perform operations on values and variables.
+
+### Arithmetic Operators
+
+| Operator | Meaning | Example |
+|---|---|---|
+| + | Addition | `10 + 5` |
+| - | Subtraction | `10 - 5` |
+| * | Multiplication | `10 * 5` |
+| / | Division | `10 / 5` |
+| // | Floor Division | `10 // 3` |
+| % | Modulus | `10 % 3` |
+| ** | Exponentiation | `2 ** 3` |
+
+### Comparison Operators
+
+| Operator | Meaning |
+|---|---|
+| == | Equal to |
+| != | Not equal to |
+| > | Greater than |
+| < | Less than |
+| >= | Greater than or equal to |
+| <= | Less than or equal to |
+
+### Logical Operators
+
+| Operator | Meaning |
+|---|---|
+| and | Both conditions must be true. |
+| or | At least one condition must be true. |
+| not | Reverses the condition. |
+
+Example:
+
+```python
+age = 25
+
+print(age > 18 and age < 60)
+```
+
+Output:
+
+```text
+True
+```
+
+## 12. Input and Output in Python
+
+### Output – print()
+
+The `print()` function displays information on the screen.
+
+```python
+print("Welcome to Python")
+print(100)
+```
+
+### Input – input()
+
+The `input()` function receives information from the user.
+
+```python
+name = input("Enter your name: ")
+
+print("Welcome", name)
+```
+
+Important: The `input()` function returns a string by default.
+
+If you want a number, convert the input.
+
+```python
+age = int(input("Enter your age: "))
+
+print(age)
+```
+
+## 13. Type Conversion
+
+Type conversion means converting a value from one data type to another.
+
+Common conversion functions:
+
+| Function | Purpose |
+|---|---|
+| int() | Converts to an integer when possible. |
+| float() | Converts to a floating-point number. |
+| str() | Converts to a string representation. |
+| bool() | Converts to a Boolean value. |
+| complex() | Creates a complex number. |
+
+Example:
+
+```python
+number = "100"
+
+converted_number = int(number)
+
+print(converted_number)
+print(type(converted_number))
+```
+
+Output:
+
+```text
+100
+<class 'int'>
+```
+
+## 14. Comments in Python
+
+Comments are notes written inside the code to explain what the program does.
+
+Python ignores comments during normal execution.
+
+### Single-Line Comment
+
+```python
+# This is a single-line comment
+
+name = "Ammar"
+print(name)
+```
+
+### Multi-Line Explanation
+
+```python
+"""
+This program demonstrates
+how to display information
+using Python.
+"""
+
+print("Hello World")
+```
+
+Python does not have a dedicated multiline comment syntax. Triple-quoted strings are commonly used for documentation strings (docstrings) and multiline text.
+
+## 15. Escape Characters in Python
+
+Escape characters are special sequences used inside strings to represent certain characters or formatting.
+
+| Escape Character | Purpose |
+|---|---|
+| `\n` | New line |
+| `\t` | Horizontal tab |
+| `\\` | Backslash |
+| `\"` | Double quotation mark |
+| `\'` | Single quotation mark |
+
+Example:
+
+```python
+print("Hello\nWorld")
+```
+
+Output:
+
+```text
+Hello
+World
+```
+
+Another example:
+
+```python
+print("Name:\tAmmar")
+```
+
+Output:
+
+```text
+Name:   Ammar
+```
+
+## 16. Python Random Module
+
+Python provides a built-in `random` module to generate pseudo-random values.
+
+Example:
+
+```python
+import random
+
+number = random.randint(20, 31)
+
+print(number)
+```
+
+The `randint()` function returns a random integer between 20 and 31, including both endpoints.
+
+Other useful functions:
+
+```python
+import random
+
+print(random.random())
+print(random.randint(1, 10))
+print(random.choice(["Red", "Blue", "Green"]))
+```
+
+- `random()` generates a floating-point number from 0 up to, but not including, 1.
+- `randint()` generates a random integer within the given range.
+- `choice()` selects one item from a sequence.
+
+Security Note: The `random` module is not suitable for generating passwords, authentication tokens, or cryptographic keys. Use the `secrets` module for security-sensitive random values.
+
+---
+
+# 🧠 Practical Exercises
+
+Practice these examples to strengthen your understanding.
+
+### Exercise 1 – Variables
+
+Create variables for:
+- Your name.
+- Your age.
+- Your city.
+- Your profession.
+
+Display all values using `print()`.
+
+### Exercise 2 – Data Types
+
+Create variables containing:
+- Integer.
+- Float.
+- String.
+- Boolean.
+- Complex number.
+
+Use `type()` to identify their data types.
+
+### Exercise 3 – Mutable Objects
+
+Create a list of five student names.
+
+- Add a sixth student.
+- Remove one student.
+- Change the first student's name.
+- Print the final list.
+
+### Exercise 4 – Immutable Objects
+
+Create a string containing your name.
+
+- Display its identity using `id()`.
+- Concatenate your surname.
+- Display the new value and identity.
+- Understand why strings are immutable.
+
+### Exercise 5 – User Input
+
+Ask the user to enter:
+- Name.
+- Age.
+- City.
+
+Display the information in a formatted message.
+
+### Exercise 6 – Arithmetic Operations
+
+Ask the user for two numbers and perform:
+
+- Addition.
+- Subtraction.
+- Multiplication.
+- Division.
+- Modulus.
+
+### Exercise 7 – Random Numbers
+
+Generate a random integer between 1 and 100.
+
+---
+
+# 🎯 Lecture 4 – Key Takeaways
+
+After completing this lecture, you should understand:
+
+- What Python is and why it is used.
+- How computers process binary instructions.
+- Source code vs bytecode vs machine code.
+- Interpreter vs compiler.
+- How Python executes code.
+- What Python Virtual Machine (PVM) does.
+- What CPython is.
+- Variables and built-in data types.
+- Dynamic typing.
+- Mutable vs immutable objects.
+- Python operators.
+- Input and output.
+- Type conversion.
+- Comments and escape characters.
+- Python's random module.
+
+Learning Reminder:
+
+Programming is not about memorizing code. It is about understanding how instructions work, how data is managed, and how computers execute those instructions.
+
+Boot Camp – Python Programming Fundamentals
+
+Keep Learning | Keep Practicing | Keep Building.
