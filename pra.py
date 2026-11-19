@@ -41,7 +41,7 @@ print(Myname) #Output Hamza Masood
 a = "10" #String
 b = "5" #String
 
-print(a+b)
+print(a+b) #Output will be 105 as this will be condsidered as string
 
 a = int(a) #Convert String into Integer
 b = int(b) #Convert String into Integer
